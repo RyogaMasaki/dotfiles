@@ -1,0 +1,88 @@
+Xcursor.size: 16
+
+! Xft settings
+Xft.dpi: 82
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.antialias: true
+Xft.lcdfilter: lcddefault
+
+! ---- URxvt ---- !
+! - font
+URxvt.font:	xft:Inconsolata\ for\ Powerline:size=15,\
+						xft:Roboto\ Mono\ for\ Powerline:size=15,\
+						xft:Togoshi\ Mono:size=15
+URxvt.letterSpace: -1
+! - remove ctrl+shift menu
+URxvt.iso14755: False
+! - intl input methods
+URxvt.inputMethod: ibus
+URxvt.preeditType: OverTheSpot
+! - disable scrollbar
+URxvt.scrollBar: false
+! - terminal padding
+URxvt.internalBorder: 30
+! - transparency
+URxvt.depth: 32
+URxvt.perl-ext: default,matcher,selection-to-clipboard,confirm-paste
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+! ░▓█ rofi
+rofi.font: Inconsolata for Powerline 12
+rofi.color-enabled: true
+rofi.color-window: argb:d8232c33, #7c9fa6, argb:00000000
+rofi.color-normal: argb:0000000, #99bfba, argb:0000000, #7c9fa6, #1b2b34
+rofi.color-active: argb:0000000, #6699cc, argb:0000000, #6699cc, #1b2b34
+rofi.color-urgent: argb:0000000, #e12a36, argb:0000000, #dd2a4b, #1b2b34
+
+rofi.padding: 16
+rofi.separator-style: none
+rofi.hide-scrollbar: true
+rofi.sidebar-mode: true
+rofi.ssh-set-title: true
+
+
+! ---- colors ---- !
+! scheme: ryuuko
+! https://github.com/dylanaraps/ryuuko
+
+! special
+*.foreground:   #f0f0f0
+*.background:   rgba:2300/2c00/3300/d800
+*.cursorColor:  #f0f0f0
+
+! black
+! Second black is grey
+*.color0:       #232c33
+*.color8:       #70838c
+
+! red
+*.color1:       #99736e
+*.color9:       #99736e
+
+! green
+*.color2:       #78a090
+*.color10:      #78a090
+
+! yellow
+*.color3:       #bfb7a1
+*.color11:      #bfb7a1
+
+! blue
+*.color4:       #7c9fa6
+*.color12:      #7c9fa6
+
+! magenta
+*.color5:       #BF9C86
+*.color13:      #BF9C86
+
+! cyan
+*.color6:       #99BFBA
+*.color14:      #99BFBA
+
+! white
+*.color7:       #f0f0f0
+*.color15:      #f0f0f0

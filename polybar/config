@@ -1,0 +1,257 @@
+[colors]
+#background = #2f1e2e 	
+#background = #002b36
+background = #151515
+
+#light_purple = #815ba4
+#light_purple = #6c71c4
+#light_purple = #a363d5
+light_purple = #A4DFFF
+
+#green = #48b685
+#green = #16a085
+green = #a4dfff
+
+#dark_grey = #776e71
+#dark_grey = #93a1a1
+#dark_grey = #a6afb8
+dark_grey = #A4DFFF
+
+#yellow = #fec418
+#yellow = #b58900
+#yellow = #e4b51c
+yellow = #A4DFFF
+
+#blue = #06b6ef
+#blue = #268bd2
+#blue = #33b5e1
+blue = #A4DFFF
+
+#cyan = #5bc4bf
+#cyan = #2aa198
+#cyan = #52cbb0 
+cyan = #A4DFFF
+
+#white = #e7e9db
+#white = #fdf6e3
+#white = #f5f7fa
+white = #A4DFFF
+
+#alert = #ef6155
+#alert = #dc322f
+#alert = #ef5253
+alert = #A4DFFF
+
+[bar/bar]
+width = 100%
+height = 27
+
+background = ${colors.background}
+foreground = ${colors.green}
+
+line-size = 4
+#line-color = #f00
+
+border-size = 11
+border-bottom-size = 5
+border-top-size = 10
+#border-color = #EAC6D0
+#border-color = #073642
+#border-color = #073642
+border-color = #151515
+
+padding-left = 2
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+                                                                                                           
+#font-0 = xos4 Terminus:size=13;1                                                                           
+font-0 = Inconsolata:size=11:antialias=true:hinting=true
+
+font-1 = Togoshi\ Gothic:antialias=true                                              
+font-2 = siji:pixelsize=10;1                                                                               
+font-3 = fontawesome-webfont.ttf:size13:1                                                                  
+                                                                                                           
+modules-left = i3 
+modules-center = mpd
+modules-right = volume wired-network date
+tray-position = right
+
+[module/bspwm]
+type = internal/bspwm
+ 
+label-focused = %index%
+label-focused-background = ${colors.background}
+label-focused-underline= ${colors.yellow}
+label-focused-padding = 2
+ 
+label-occupied = %index%
+label-occupied-padding = 2
+ 
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+ 
+label-empty = %index%
+label-empty-foreground = ${colors.green}
+label-empty-padding = 2
+                                                                       
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+ 
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+ 
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.green}
+ 
+; focused = Active workspace on focused monitor
+label-focused = %name%
+label-focused-background = ${module/bspwm.label-focused-background}
+label-focused-underline = ${module/bspwm.label-focused-underline}
+label-focused-padding = ${module/bspwm.label-focused-padding}
+ 
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %icon%
+label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+ 
+; visible = Active workspace on unfocused monitor
+label-visible = %name%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+ 
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${module/bspwm.label-urgent-background}
+label-urgent-padding = ${module/bspwm.label-urgent-padding}
+ 
+; icons
+ws-icon-default = 
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+;ws-icon-2 = 3;
+ws-icon-3 = 6;
+
+[module/memory]
+type = internal/memory
+interval = 5
+format-prefix = "Mem:"
+format-prefix-foreground = ${colors.green}
+format-underline = ${colors.green}
+label = %percentage_used%%
+
+[module/title]
+type = internal/xwindow
+label = %title::36…%
+label-maxlen = 36
+label-underline = ${colors.cyan}
+
+[module/wired-network]
+type = internal/network
+interface = enp10s0u1u2
+; Seconds to sleep between updates
+; Default: 1
+interval = 5
+
+; Test connectivity every Nth update
+; A value of 0 disables the feature
+; NOTE: Experimental (needs more testing)
+; Default: 0
+;ping-interval = 3
+
+; @deprecated: Define min width using token specifiers (%downspeed:min% and %upspeed:min%)
+; Minimum output width of upload/download rate
+; Default: 3
+udspeed-minwidth = 5
+
+; Accumulate values from all interfaces
+; when querying for up/downspeed rate
+; Default: false
+accumulate-stats = true
+
+format-connected-underline = #55aa55
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.green}
+label-connected = %local_ip%
+ 
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.green}
+
+[module/wireless-network]
+type = internal/network
+interface = wlp2s0
+
+interval = 3.0
+
+[module/mpd]
+type = internal/mpd
+
+host = 127.0.0.1
+port = 6600
+password = mysecretpassword
+
+; Seconds to sleep between progressbar/song timer sync
+; Default: 1
+interval = 2
+
+[module/volume]
+type = internal/volume
+ 
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL
+label-volume-foreground = ${colors.green}
+format-volume-underline = ${colors.yellow}
+ 
+format-muted-foreground = ${colors.green}
+label-muted = sound muted
+format-muted-underline = ${colors.yellow}
+ 
+bar-volume-width = 7
+bar-volume-foreground-0 = ${colors.green}
+bar-volume-foreground-1 = ${colors.green}
+bar-volume-foreground-2 = ${colors.green}
+bar-volume-foreground-3 = ${colors.green}
+bar-volume-foreground-4 = ${colors.green}
+bar-volume-foreground-5 = ${colors.yellow}
+bar-volume-foreground-6 = ${colors.alert}
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.white}
+[module/date]
+type = internal/date
+interval = 1
+ 
+date = "%Y.%m.%d"
+time = %H:%M:%S
+ 
+format-prefix-foreground = ${colors.green}
+format-underline = ${colors.blue}
+ 
+label = %date% %time%
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
