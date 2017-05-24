@@ -11,9 +11,11 @@ Xft.lcdfilter: lcddefault
 
 ! ---- URxvt ---- !
 ! - font
-URxvt.font:	xft:Inconsolata\ for\ Powerline:size=15,\
-						xft:Roboto\ Mono\ for\ Powerline:size=15,\
-						xft:Togoshi\ Mono:size=15
+!URxvt.font:	xft:Inconsolata\ for\ Powerline:size=15,\
+!						xft:Roboto\ Mono\ for\ Powerline:size=15,\
+!						xft:Togoshi\ Mono:size=15
+URxvt.font: xft:Source\ Code\ Pro\ for\ Powerline:size=13,\
+						xft:Source\ Han\ Sans\ JP\ Regular:size=13
 URxvt.letterSpace: -1
 ! - remove ctrl+shift menu
 URxvt.iso14755: False
@@ -61,28 +63,35 @@ rofi.ssh-set-title: true
 
 ! red
 *.color1:       #99736e
-*.color9:       #99736e
+!*.color9:       #99736e
+*.color9: #7F5F5B
 
 ! green
 *.color2:       #78a090
-*.color10:      #78a090
+!*.color10:      #78a090
+*.color10: #658679
 
 ! yellow
 *.color3:       #bfb7a1
-*.color11:      #bfb7a1
+!*.color11:      #bfb7a1
+*.color11: #A59E8B
 
 ! blue
 *.color4:       #7c9fa6
-*.color12:      #7c9fa6
+!*.color12:      #7c9fa6
+*.color12: #69878C
 
 ! magenta
 *.color5:       #BF9C86
-*.color13:      #BF9C86
+!*.color13:      #BF9C86
+*.color13: #A68875
 
 ! cyan
 *.color6:       #99BFBA
-*.color14:      #99BFBA
+!*.color14:      #99BFBA
+*.color14: #85A6A2
 
 ! white
 *.color7:       #f0f0f0
-*.color15:      #f0f0f0
+!*.color15:      #f0f0f0
+*.color15: #BCBCBC
