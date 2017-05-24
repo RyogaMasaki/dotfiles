@@ -17,3 +17,6 @@ cp ~/.oh-my-zsh/themes/avit_mod.zsh-theme zsh
 mkdir -p polybar
 cp ~/.config/polybar/config polybar
 
+mkdir -p neofetch
+cp ~/.config/neofetch/config neofetch
+
