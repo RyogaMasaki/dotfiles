@@ -20,3 +20,9 @@ cp ~/.config/polybar/config polybar
 mkdir -p neofetch
 cp ~/.config/neofetch/config neofetch
 
+mkdir -p config
+cp ~/.config/locale.conf config/locale.conf
+
+mkdir -p wallpaper
+cp ~/.wallpaper/* wallpaper
+

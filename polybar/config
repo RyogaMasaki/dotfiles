@@ -7,103 +7,101 @@ width = 100%
 height = 32
 background = ${xrdb:background}
 foreground = ${xrdb:foreground}
+line-size = 3
+line-color = ${xrdb:color1}
 
-font-0 = Inconsolata:size=12:antialias=true:hinting=true
-font-1 = Togoshi\ Mono:size=11:antialias=true
-font-2 = fontawesome-webfont.ttf:size13:1
+font-0 = Source\ Code\ Pro:size=14;3
+font-1 = Source\ Han\ Sans\ JP\ Regular:size=14;3
+font-2 = fontawesome-webfont.ttf:size=14;3
 
-padding = 1
+padding-left = 0
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 1
+
 border-size = 0
-border-bottom-size = 2
-border-color = ${xrdb:color4}
+
+;wm-restack = 13
+;override-redirect = true
+
+;dim-value = 0.4
+modules-left = i3
 
 [bar/left]
 inherit = bar/bar
 monitor = ${cfg.left_monitor}
 
-modules-left = i3
 tray-position = right
+tray-padding-right = 10
+tray-maxsize = 20
 
+modules-right = wireless-network date
+modules-center = xwindow
 
 [bar/right]
 inherit = bar/bar
 monitor = ${cfg.right_monitor}
 
-modules-left = mpd
-modules-right = volume date
+modules-center = mpd
+modules-right = volume
 
-[module/bspwm]
-type = internal/bspwm
- 
-label-focused = %index%
-label-focused-background = ${colors.background}
-label-focused-underline= ${colors.yellow}
-label-focused-padding = 2
- 
-label-occupied = %index%
-label-occupied-padding = 2
- 
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
- 
-label-empty = %index%
-label-empty-foreground = ${colors.green}
-label-empty-padding = 2
-                                                                       
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:70:…%
+
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
-pin-workspaces = false
+pin-workspaces = true
 index-sort = true
 wrapping-scroll = false
 enable-click = true
 
 
-label-mode-padding = 10
+label-mode-padding = 1
 label-mode-foreground = #000
-;label-mode-background = ${colors.green}
+label-mode-background = ${xrdb:color11}
  
 ; focused = Active workspace on focused monitor
 label-focused = %name%
-label-focused-underline = ${xrdb:color6}
-label-focused-padding = 10
+label-focused-background = ${xrdb:color0}
+label-focused-underline = ${xrdb:color4}
+label-focused-padding = ${self.label-mode-padding}
  
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
-label-unfocused-padding = 5
+label-unfocused-padding = ${self.label-mode-padding}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
 ;label-visible-background = ${self.label-focused-background}
 ;label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = 2
+label-visible-padding = ${self.label-mode-padding}
  
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
+label-urgent = %name%
+label-urgent-underline = ${xrdb:color1}
 ;label-urgent-background = ${module/bspwm.label-urgent-background}
-;label-urgent-padding = ${module/bspwm.label-urgent-padding}
+label-urgent-padding = ${self.label-mode-padding}
  
 ; icons
-;ws-icon-default = 
+ws-icon-default = 
 ;ws-icon-0 = 1;
 ;ws-icon-1 = 2;
 ;ws-icon-2 = 3;
 ;ws-icon-3 = 6;
-
-[module/memory]
-type = internal/memory
-interval = 5
-format-prefix = "Mem:"
-format-prefix-foreground = ${colors.green}
-format-underline = ${colors.green}
-label = %percentage_used%%
 
 [module/title]
 type = internal/xwindow
 label = %title::36…%
 label-maxlen = 36
 ;label-underline = ${colors.cyan}
+
+[module/network]
+type = internal/network
+interval = 5
+
+
 
 [module/wired-network]
 type = internal/network
@@ -140,10 +138,17 @@ format-disconnected =
 ;label-disconnected-foreground = ${colors.green}
 
 [module/wireless-network]
-type = internal/network
+inherit = module/network
 interface = wlp3s0
 
-interval = 3.0
+interval = 5
+
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+
+label-connected =  %essid%
+label-disconnected =  ⋯
+label-disconnected-foreground = ${xrdb:color1}
 
 [module/mpd]
 type = internal/mpd
@@ -159,42 +164,34 @@ interval = 2
 type = internal/volume
  
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL
-;label-volume-foreground = ${colors.green}
-;format-volume-underline = ${colors.yellow}
+label-volume = 
+label-muted = " ⋯⋯⋯⋯⋯"
  
-;format-muted-foreground = ${colors.green}
-label-muted = sound muted
-;format-muted-underline = ${colors.yellow}
- 
-bar-volume-width = 7
-bar-volume-foreground-0 = ${colors.green}
-bar-volume-foreground-1 = ${colors.green}
-bar-volume-foreground-2 = ${colors.green}
-bar-volume-foreground-3 = ${colors.green}
-bar-volume-foreground-4 = ${colors.green}
-bar-volume-foreground-5 = ${colors.yellow}
-bar-volume-foreground-6 = ${colors.alert}
+bar-volume-width = 5
+bar-volume-foreground-0 = ${xrdb:color4}
 bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
+bar-volume-indicator =  
+bar-volume-indicator-font = 0
 bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.white}
+bar-volume-empty-foreground = ${xrdb:color15}
 
 [module/date]
 type = internal/date
 interval = 1
  
-date = "%Y.%m.%d"
-time = %H:%M:%S
- 
+date = ""
+date-alt = "%Y.%m.%d"
+time = "%H:%M"
+time-alt = " %H:%M:%S"
+
+format-prefix = " "
 ;format-prefix-foreground = ${colors.green}
 ;format-underline = ${colors.blue}
  
-label = %date% %time%
+label = %date%%time%
 
 [settings]
 screenchange-reload = true
@@ -204,8 +201,7 @@ screenchange-reload = true
 ;compositing-border = over
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+margin-top = 0
+margin-bottom = 3
 
 ; vim:ft=dosini
-

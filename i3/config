@@ -71,8 +71,8 @@ bindsym $mod+a focus parent
 # focus the child container
 #  accesso
 set $workspace1 "¹ "
-#  email
-set $workspace2 "² "
+# irc
+set $workspace2 "² "
 #  terminal1
 set $workspace3 "³ "
 #  terminal2
@@ -161,22 +161,26 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-				position top
-}
+#bar {
+#        status_command i3status
+#				position top
+#}
 
 bindsym $mod+l exec lock.sh
 
 for_window [class="^.*"] border pixel 2 #6699cc
 for_window [class="xpad"] floating enable
+for_window [class="feh"] floating enable
 
 gaps inner 12
 gaps outer 6
 smart_gaps on
 smart_borders on
 
-
-exec --no-startup-id monitorlayout.sh
-exec --no-startup-id /usr/bin/compton -b -c
+exec --no-startup-id ~/.screenlayout/default.sh
 exec --no-startup-id ~/.fehbg
+# exec --no-startup-id ibus-daemon --xim --replace
+exec --no-startup-id /usr/bin/compton -c -b --backend glx --vsync opengl-swc &
+exec --no-startup-id mpd &
+
+exec_always --no-startup-id polybar.sh

@@ -9,28 +9,28 @@ PROMPT2='%{$fg[$CARETCOLOR]%}◀%{$reset_color%} '
 
 RPROMPT='$(_vi_status)%{$(echotc UP 1)%}$(_git_time_since_commit) $(git_prompt_status)${_return_status}%{$(echotc DO 1)%}'
 
-local _current_dir="%{$fg[cyan]%}%3~%{$reset_color%} "
+local _current_dir="%{$fg_bold[yellow]%}%3~%{$reset_color%} "
 local _return_status="%{$fg_bold[red]%}%(?..✖)%{$reset_color%}"
 local _hist_no="%{$fg[grey]%}%h%{$reset_color%}"
 
 function _current_dir() {
   local _max_pwd_length="65"
   if [[ $(echo -n $PWD | wc -c) -gt ${_max_pwd_length} ]]; then
-    echo "%{$fg[cyan]%}%-2~ ... %3~%{$reset_color%} "
+    echo "%{$fg_bold[yellow]%}%-2~ ... %3~%{$reset_color%} "
   else
-    echo "%{$fg[cyan]%}%~%{$reset_color%} "
+    echo "%{$fg_bold[yellow]%}%~%{$reset_color%} "
   fi
 }
 
 function _user_host() {
   #if [[ -n $SSH_CONNECTION ]]; then
-    #me="%n@%m"
+    me="%n@%m"
   #elif [[ $LOGNAME != $USER ]]; then
   #  me="%n"
   #fi
-  #if [[ -n $me ]]; then
-    echo "%{$fg_bold[yellow]%}%n%{$reset_color%}@%{$fg_bold[yellow]%}%m"
-  #fi
+  if [[ -n $me ]]; then
+    echo "%{$fg[cyan]%}$me%{$reset_color%}"
+  fi
 }
 
 function _vi_status() {
