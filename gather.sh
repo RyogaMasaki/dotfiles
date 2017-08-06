@@ -29,3 +29,8 @@ cp ~/.wallpaper/* wallpaper
 mkdir -p dunst
 cp ~/.config/dunstrc dunst
 
+cp ~/.fehbg .
+
+mkdir -p conky
+cp ~/.config/conky/conky.conf conky
+

@@ -4,7 +4,7 @@ Xcursor.size: 16
 ! 25in @ 2560x1080
 Xft.dpi: 111
 Xft.rgba: rgb
-Xft.hinting: true
+Xft.hinting: false
 Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.antialias: true
@@ -15,8 +15,8 @@ Xft.lcdfilter: lcddefault
 !URxvt.font:	xft:Inconsolata\ for\ Powerline:size=15,\
 !						xft:Roboto\ Mono\ for\ Powerline:size=15,\
 !						xft:Togoshi\ Mono:size=15
-URxvt.font: xft:Source\ Code\ Pro\ for\ Powerline:size=13,\
- 						xft:Source\ Han\ Sans\ JP\ Regular:size=13
+URxvt.font: xft:Source\ Code\ Pro\ for\ Powerline:size=12,\
+ 						xft:Source\ Han\ Sans\ JP\ Regular:size=12
 URxvt.letterSpace: -1
 ! - remove ctrl+shift menu
 URxvt.iso14755: False
@@ -26,12 +26,11 @@ URxvt.preeditType: OverTheSpot
 ! - disable scrollbar
 URxvt.scrollBar: false
 ! - terminal padding
-URxvt.internalBorder: 30
-! - transparency
-URxvt.depth: 32
+URxvt.internalBorder: 20
 URxvt.perl-ext: default,matcher,selection-to-clipboard,confirm-paste
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
+URxvt.depth: 32
 
 ! ░▓█ rofi
 !rofi.font: xft:xft:Inconsolata\ for\ Powerline
@@ -48,140 +47,35 @@ rofi.sidebar-mode: true
 rofi.ssh-set-title: true
 
 rofi.display-drun: >
-! ---- colors ---- !
-! scheme: ryuuko
-! https://github.com/dylanaraps/ryuuko
+!░░ colors 
+! define some key colors
+#define key1		#23898d
+#define key2		#6699cc
 
-! special
-!*.foreground:   #f0f0f0
-!*.background:   rgba:2300/2c00/3300/d800
-!*.cursorColor:  #f0f0f0
-
+*background: #000
+URxvt.background:	rgba:0000/0000/0000/c000
+*foreground: #ccc
 ! black
-! Second black is grey
-!*.color0:       #232c33
-!*.color8:       #70838c
-
+*color0: #686B82
+*color8: #2B2A3B
 ! red
-!*.color1:       #99736e
-!*.color9:       #99736e
-!*.color9: #7F5F5B
-
+*color1: #9b0727
+*color9: #b50a2a
 ! green
-!*.color2:       #78a090
-!*.color10:      #78a090
-!*.color10: #658679
-
+*color2: #00db8a
+*color10: #00FA8E
 ! yellow
-!*.color3:       #bfb7a1
-!*.color11:      #bfb7a1
-!*.color11: #A59E8B
-
+*color3: #d17959
+*color11: #E5D781
 ! blue
-!*.color4:       #7c9fa6
-!*.color12:      #7c9fa6
-!*.color12: #69878C
-
+*color4: #6699cc
+*color12: #18A2FF
 ! magenta
-!*.color5:       #BF9C86
-!*.color13:      #BF9C86
-!*.color13: #A68875
-
+*color5: #ba59d6
+*color13: #e874e0
 ! cyan
-!*.color6:       #99BFBA
-!*.color14:      #99BFBA
-!*.color14: #85A6A2
-
+*color6: key1
+*color14: #47E3DD
 ! white
-!*.color7:       #f0f0f0
-!*.color15:      #f0f0f0
-!*.color15: #BCBCBC
-!
-!#define S_base03        #002b36
-!#define S_base02        #073642
-!#define S_base01        #586e75
-!#define S_base00        #657b83
-!#define S_base0         #839496
-!#define S_base1         #93a1a1
-!#define S_base2         #eee8d5
-!#define S_base3         #fdf6e3
-
-!*background:            S_base03
-URxvt.background:	rgba:0000/2b00/3600/d800
-!*foreground:            S_base0
-!*fadeColor:             S_base03
-!*cursorColor:           S_base1
-!*pointerColorBackground:S_base01
-!*pointerColorForeground:S_base1
-
-!#define S_yellow        #b58900
-!#define S_orange        #cb4b16
-!#define S_red           #dc322f
-!#define S_magenta       #d33682
-!#define S_violet        #6c71c4
-!#define S_blue          #268bd2
-!#define S_cyan          #2aa198
-!#define S_green         #859900
-!
-!! black dark/light
-!*color0:                S_base02
-!*color8:                S_base03
-!
-!!! red dark/light
-!*color1:                S_red
-!*color9:                S_orange
-
-!!! green dark/light
-!*color2:                S_green
-!*color10:               S_base01
-
-!! yellow dark/light
-!*color3:                S_yellow
-!*color11:               S_base00
-
-!! blue dark/light
-!*color4:                S_blue
-!*color12:               S_base0
-
-!! magenta dark/light
-!*color5:                S_magenta
-!*color13:               S_violet
-
-!! cyan dark/light
-!*color6:                S_cyan
-!*color14:               S_base1
-
-!! white dark/light
-!*color7:                S_base2
-!*color15:               S_base3
-
-! Hybrid Terminal Colours. Uses the palette from Tomorrow-Night:
-! https://github.com/chriskempson/tomorrow-theme/blob/master/vim/colors/Tomorrow-Night.vim
-! vim: ft=xdefaults
-
-*background: #1D1F21
-*foreground: #C5C8C6
-! black
-*color0: #282A2E
-*color8: #373B41
-! red
-*color1: #A54242
-*color9: #CC6666
-! green
-*color2: #8C9440
-*color10: #B5BD68
-! yellow
-*color3: #DE935F
-*color11: #F0C674
-! blue
-*color4: #5F819D
-*color12: #81A2BE
-! magenta
-*color5: #85678F
-*color13: #B294BB
-! cyan
-*color6: #5E8D87
-*color14: #8ABEB7
-! white
-*color7: #707880
-*color15: #C5C8C6
+*color7: #C8D1E3
+*color15: #EDEFF2
