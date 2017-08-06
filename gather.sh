@@ -26,3 +26,6 @@ cp ~/.config/locale.conf config/locale.conf
 mkdir -p wallpaper
 cp ~/.wallpaper/* wallpaper
 
+mkdir -p dunst
+cp ~/.config/dunstrc dunst
+

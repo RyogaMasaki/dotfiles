@@ -5,8 +5,8 @@ right_monitor = DVI-D-0
 [bar/bar]
 width = 100%
 height = 32
-background = ${xrdb:background}
-foreground = ${xrdb:foreground}
+background = #d0
+foreground = #23898d
 line-size = 3
 line-color = ${xrdb:color1}
 
@@ -15,7 +15,7 @@ font-1 = Source\ Han\ Sans\ JP\ Regular:size=14;3
 font-2 = fontawesome-webfont.ttf:size=14;3
 
 padding-left = 0
-padding-right = 2
+padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
 
@@ -25,46 +25,53 @@ border-size = 0
 ;override-redirect = true
 
 ;dim-value = 0.4
-modules-left = i3
+modules-left = i3 xwindow
+modules-right = date
 
 [bar/left]
 inherit = bar/bar
 monitor = ${cfg.left_monitor}
 
-tray-position = right
-tray-padding-right = 10
-tray-maxsize = 20
-
-modules-right = wireless-network date
-modules-center = xwindow
+#modules-center = xwindow
+#modules-right = date
 
 [bar/right]
 inherit = bar/bar
 monitor = ${cfg.right_monitor}
+
+tray-position = right
+tray-padding-right = 10
+tray-maxsize = 28
+tray-scale = 1
+tray-offset-x = -5
 
 modules-center = mpd
 modules-right = volume
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:70:…%
+label = %title:0:60:…%
+
+#format-padding = 1;
+#format-background = #d0333333
 
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
 pin-workspaces = true
-index-sort = true
+#index-sort = true
+strip-wsnumbers = true
 wrapping-scroll = false
 enable-click = true
 
 
 label-mode-padding = 1
-label-mode-foreground = #000
-label-mode-background = ${xrdb:color11}
+#label-mode-foreground = #000
+#label-mode-background = ${xrdb:color11}
  
 ; focused = Active workspace on focused monitor
 label-focused = %name%
-label-focused-background = ${xrdb:color0}
+#label-focused-background = ${xrdb:color0}
 label-focused-underline = ${xrdb:color4}
 label-focused-padding = ${self.label-mode-padding}
  
@@ -91,24 +98,24 @@ ws-icon-default = 
 ;ws-icon-2 = 3;
 ;ws-icon-3 = 6;
 
-[module/title]
-type = internal/xwindow
-label = %title::36…%
-label-maxlen = 36
-;label-underline = ${colors.cyan}
+#[module/title]
+#type = internal/xwindow
+#label = %title::36…%
+#label-maxlen = 36
+#;label-underline = ${colors.cyan}
 
-[module/network]
-type = internal/network
-interval = 5
+#[module/network]
+#type = internal/network
+#interval = 5
 
 
 
-[module/wired-network]
-type = internal/network
-interface = enp10s0u1u2
+#[module/wired-network]
+#type = internal/network
+#interface = enp10s0u1u2
 ; Seconds to sleep between updates
 ; Default: 1
-interval = 5
+#interval = 5
 
 ; Test connectivity every Nth update
 ; A value of 0 disables the feature
@@ -119,37 +126,37 @@ interval = 5
 ; @deprecated: Define min width using token specifiers (%downspeed:min% and %upspeed:min%)
 ; Minimum output width of upload/download rate
 ; Default: 3
-udspeed-minwidth = 5
+#udspeed-minwidth = 5
 
 ; Accumulate values from all interfaces
 ; when querying for up/downspeed rate
 ; Default: false
-accumulate-stats = true
+#accumulate-stats = true
 
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.green}
-label-connected = %local_ip%
+#format-connected-underline = #55aa55
+#format-connected-prefix = " "
+#format-connected-prefix-foreground = ${colors.green}
+#label-connected = %local_ip%
  
-format-disconnected =
+#format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.green}
 
-[module/wireless-network]
-inherit = module/network
-interface = wlp3s0
+#[module/wireless-network]
+#inherit = module/network
+#interface = wlp3s0
 
-interval = 5
-
-format-connected = <label-connected>
-format-disconnected = <label-disconnected>
-
+#interval = 5
+#
+#format-connected = <label-connected>
+#format-disconnected = <label-disconnected>
+#
 label-connected =  %essid%
 label-disconnected =  ⋯
-label-disconnected-foreground = ${xrdb:color1}
-
+#label-disconnected-foreground = ${xrdb:color1}
+#
 [module/mpd]
 type = internal/mpd
 
@@ -192,6 +199,7 @@ format-prefix = " "
 ;format-underline = ${colors.blue}
  
 label = %date%%time%
+click-right = zenity --calendar
 
 [settings]
 screenchange-reload = true

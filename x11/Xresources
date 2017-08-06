@@ -34,7 +34,7 @@ URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 
 ! ░▓█ rofi
-rofi.font: Inconsolata for Powerline 12
+!rofi.font: xft:xft:Inconsolata\ for\ Powerline
 rofi.color-enabled: true
 rofi.color-window: argb:d8232c33, #7c9fa6, argb:00000000
 rofi.color-normal: argb:0000000, #99bfba, argb:0000000, #7c9fa6, #1b2b34
@@ -47,7 +47,7 @@ rofi.hide-scrollbar: true
 rofi.sidebar-mode: true
 rofi.ssh-set-title: true
 
-
+rofi.display-drun: >
 ! ---- colors ---- !
 ! scheme: ryuuko
 ! https://github.com/dylanaraps/ryuuko

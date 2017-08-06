@@ -10,7 +10,7 @@ font pango:Inconsolata 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -68,28 +68,28 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
-#  accesso
-set $workspace1 "¹ "
-# irc
-set $workspace2 "² "
-#  terminal1
-set $workspace3 "³ "
-#  terminal2
-set $workspace4 "⁴ "
-#  dev1
-set $workspace5 "⁵ "
-#  dev2
-set $workspace6 "⁶ "
+# desktop/conky
+set $workspace1 "1:¹ "
+# term1
+set $workspace2 "2:² "
+# term2
+set $workspace3 "3:³ "
+# fileman
+set $workspace4 "4:⁴ "
+# dev1
+set $workspace5 "5:⁵ "
+# dev2
+set $workspace6 "6:⁶ "
 #  git
-set $workspace7 "⁷ "
+set $workspace7 "7:⁷ "
 #  database
-set $workspace8 "⁸ "
-#  text edit
-set $workspace9 "⁹ "
-set $workspace10 "¹⁰ "
-set $workspace11 "¹¹ "
-set $workspace12 "¹² "
+set $workspace8 "8:⁸ "
+
+# misc work
+set $workspace9 "9:⁹ "
+set $workspace10 "10:¹⁰ "
+set $workspace11 "11:¹¹ "
+set $workspace12 "12:¹² "
 
 # switch to workspace
 # -accesso
@@ -173,13 +173,14 @@ for_window [class="xpad"] floating enable
 for_window [class="feh"] floating enable
 
 gaps inner 12
-gaps outer 6
+gaps outer 4
 smart_gaps on
 smart_borders on
 
 exec --no-startup-id ~/.screenlayout/default.sh
 exec --no-startup-id ~/.fehbg
 # exec --no-startup-id ibus-daemon --xim --replace
+exec --no-startup-id nm-applet
 exec --no-startup-id /usr/bin/compton -c -b --backend glx --vsync opengl-swc &
 exec --no-startup-id mpd &
 
