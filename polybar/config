@@ -41,7 +41,7 @@ tray-offset-x = -5
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:60:…%
+label =  %title:0:60:…%
 
 [module/i3]
 type = internal/i3
