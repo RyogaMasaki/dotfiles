@@ -1,0 +1,35 @@
+[Added Associations]
+application/octet-stream=org.gnome.FileRoller.desktop;bless.desktop;
+application/zip=mcomix.desktop;
+text/plain=visual-studio-code.desktop;bless.desktop;
+application/x-raw-disk-image=vlc.desktop;
+application/vnd.rar=mcomix.desktop;
+image/gif=gthumb.desktop;
+
+[Default Applications]
+image/gif=feh_browser.sh.desktop
+image/jpg=feh_browser.sh.desktop
+image/bmp=feh_browser.sh.desktop
+image/jpeg=feh_browser.sh.desktop
+image/png=feh_browser.sh.desktop
+image/x-png=feh_browser.sh.desktop
+inode/directory=pcmanfm.desktop
+text/xml=visual-studio-code.desktop
+text/plain=visual-studio-code.desktop
+text/html=chromium.desktop
+x-scheme-handler/http=chromium.desktop
+x-scheme-handler/https=chromium.desktop
+x-scheme-handler/about=chromium.desktop
+x-scheme-handler/unknown=chromium.desktop
+x-scheme-handler/mailto=evolution.desktop
+
+
+video/mp2t=mpv.desktop;
+video/mp4=mpv.desktop;
+video/x-flv=mpv.desktop
+video/x-ms-wmv=mpv.desktop
+video/x-msvideo=mpv.desktop
+x-scheme-handler/mailto=evolution.desktop;
+video/mpeg=mpv.desktop
+video/x-matroska=mpv.desktop
+video/quicktime=vlc.desktop

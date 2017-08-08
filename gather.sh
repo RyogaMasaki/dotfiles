@@ -22,6 +22,8 @@ cp ~/.config/neofetch/config neofetch
 
 mkdir -p config
 cp ~/.config/locale.conf config/locale.conf
+# and don't forget to ln ~/.local/share to /usr/local/share
+cp ~/.config/mimeapps.list config/mimeapps.list
 
 mkdir -p wallpaper
 cp ~/.wallpaper/* wallpaper
@@ -29,7 +31,7 @@ cp ~/.wallpaper/* wallpaper
 mkdir -p dunst
 cp ~/.config/dunstrc dunst
 
-cp ~/.fehbg .
+cp ~/.fehbg fehbg
 
 mkdir -p conky
 cp ~/.config/conky/conky.conf conky
