@@ -94,5 +94,7 @@ alias ll="ls -la --color=auto"
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
 
+PS_FORMAT=pid,user,args
+
 date
 uname -mrs
