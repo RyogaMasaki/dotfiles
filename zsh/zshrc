@@ -49,29 +49,13 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git emoji-clock mysql-colorize dirhistory nyan sudo urltools)
 
 # User configuration
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export MANPATH="/usr/local/man:$MANPATH"
-
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+export EDITOR='vim'
+export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -89,12 +73,18 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-alias ll="ls -la --color=auto"
+# ---------------------------------------------------
+
+alias ls="ls --color=auto"
+alias ll="ls -lh --color=auto"
+alias la="ls -lAh --color=auto"
+alias mkdir="mkdir -p"
+alias hw-off="systemctl poweroff"
+alias hw-suspend="systemctl suspend"
+alias hw-reboot="systemctl reboot"
 
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
 
-PS_FORMAT=pid,user,args
-
-date
 uname -mrs
+echo $(date +"%Y.%m.%d")  $(emoji-clock)$(date +"%H:%M:%S")
