@@ -10,10 +10,9 @@ cp ~/.xinitrc x11/xinitrc
 mkdir -p vim
 cp ~/.vimrc vim/vimrc
 
-mkdir -p zsh/custom
-cp ~/.zshrc zsh/zshrc
-cp ~/.oh-my-zsh/themes/avit_mod.zsh-theme zsh
-cp -r ~/.oh-my-zsh/custom/* zsh/custom
+mkdir -p zsh
+cp ~/.zshenv zsh/zshenv
+cp ~/.config/zsh/* zsh/
 
 mkdir -p polybar
 cp ~/.config/polybar/config polybar
