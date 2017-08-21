@@ -8,6 +8,30 @@ fi
 # Automatically open .log files with less
 alias -s log="less -M"
 
+axo_url="https://accesso.axosoft.com/viewitem"
+# axd - Opens a browser to an Axosoft defect
+axd() {
+	xdg-open "${axo_url}?id=${1}&type=defects" &> /dev/null
+}
+
+# axf - Opens a browser to an Axosoft feature
+axf() {
+	xdg-open "${axo_url}?id=${1}&type=features" &> /dev/null
+}
+
+# axt - Opens a browser to an Axosoft task
+axt() {
+	xdg-open "${axo_url}?id=${1}&type=tasks" &> /dev/null
+}
+
+# nphd - Opens a browser to a Prod Help Desk ticket
+# Usage: nphd 1234
+nphd() {
+	# todo: input checks
+	local jira_url="https://accessoclientservices.atlassian.net/projects/NPHD/queues/custom/120"
+	xdg-open "${jira_url}/NPHD-${1}" &> /dev/null
+}
+
 # ago - ssh to host using Accesso creds
 ago() {
 	if [ -z "$1" ]; then
@@ -25,8 +49,8 @@ aput() {
 	if [ -z "$2" ]; then
 		echo "Must specify at least one local file"; return -1
 	fi
-	HOST=$1; shift
-	scp $@ $ACCESSO_USER@$HOST:~
+	local host=$1; shift
+	scp $@ $ACCESSO_USER@$host:~
 }
 
 # aget - scp file(s) from a given host to the current dir using Accesso creds
