@@ -1,13 +1,21 @@
 # accesso tools
 # Damian Rogers (damian at sudden-desu.net)
 
+if [[ -z $ACCESSO_USER ]]; then
+	echo "\033[31;1mPlease set ACCESSO_USER variable!\033[0m"
+fi
+
 # Automatically open .log files with less
 alias -s log="less -M"
 
 # ago - ssh to host using Accesso creds
 ago() {
+	if [ -z "$1" ]; then
+		echo "Must specify a hostname"; return -1
+	fi
 	ssh $ACCESSO_USER@$1
 }
+compdef '_hosts' ago
 
 # aput - scp file(s) to a given host using Accesso creds
 aput() {
@@ -40,6 +48,16 @@ sess() {
 		echo "Must specify a session ID"; return -1
 	fi
 	grep "Session\[$1" *.log | grep SERVICE
+}
+
+# aland - Land a jar on a server
+# aland service.jar accesso00 user@host
+aland() {
+	# todo - add input checks
+	basename=${1%%.*}
+	jarname=${basename}_${ACCESSO_USER}.jar
+	lnname=${basename}_${2}.jar
+	scp ${1} ${3}:/usr/local/accesso/lib/${jarname} && ssh ${3} "cd /usr/local/accesso/lib && ln -sf ${jarname} ${lnname}"
 }
 
 # al - Accesso logs
