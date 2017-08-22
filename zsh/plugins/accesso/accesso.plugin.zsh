@@ -71,7 +71,8 @@ sess() {
 	if [ -z "$1" ]; then
 		echo "Must specify a session ID"; return -1
 	fi
-	grep "Session\[$1" *.log | grep SERVICE
+	grep "Session\[$1" *.log | grep SERVICE |  xmllint --format - | pygmentize -l xml
+
 }
 
 # aland - Land a jar on a server
@@ -94,4 +95,10 @@ al() {
 	ll
 }
 compdef '_files -W /var/log/accesso' al
+
+# req - Sends a request to a service
+req() {
+  #todo: input validation
+  curl -s --data "${2}" -X POST "http://${1}" | xmllint --format - | pygmentize -l xml
+}
 
