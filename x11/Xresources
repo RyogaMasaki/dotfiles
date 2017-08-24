@@ -29,7 +29,7 @@ URxvt.scrollBar: false
 URxvt.internalBorder: 20
 URxvt.perl-ext: default,matcher,selection-to-clipboard,confirm-paste
 URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.matcher.button: 1
+URxvt.matcher.button: 2
 URxvt.depth: 32
 
 ! ░▓█ rofi

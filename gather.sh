@@ -1,14 +1,69 @@
 #!/usr/bin/env sh
 
-mkdir -p i3
-cp ~/.config/i3/config i3
+# GLOBAL
+CONFIG=$HOME/.config
 
-mkdir -p x11
-cp ~/.Xresources x11/Xresources
-cp ~/.xinitrc x11/xinitrc
+ZSH=zsh
+I3=i3
+X11=x11
+VIM=vim
+POLYBAR=polybar
+WALLPAPER=wallpaper
+CONKY=conky
 
-mkdir -p vim
-cp ~/.vimrc vim/vimrc
+md() {
+	if [ -z $1 ]; then
+		return
+	fi
+
+	if [ ! -d $1 ]; then
+		mkdir -p $1
+	fi
+}
+
+
+# GATHER
+#  zsh
+zsh() {
+	if [ -n $1 ]; then
+		# restore
+	else
+		# gather
+		md $ZSH
+		cp $CONFIG/zsh/.zshrc $ZSH/zshrc
+		cp $HOME/.zshenv $ZSH/zshenv
+	fi
+}
+
+i3() {
+	if [ -n $1 ]; then
+		# restore
+	else
+		#gather
+		md $I3
+		cp $CONFIG/i3/config $I3
+	fi
+}
+
+x11() {
+	if [ -n $1 ]; then
+		# restore
+	else
+		#gather
+		md $X11
+		cp ~/.Xresources x11/Xresources
+		cp ~/.xinitrc x11/xinitrc
+	fi
+}
+
+vim() {
+	if [ -n $1 ]; then
+		# restore
+	else
+		md $VIM
+		cp ~/.vimrc vim/vimrc
+	fi
+}
 
 mkdir -p zsh
 cp ~/.zshenv zsh/zshenv
