@@ -70,23 +70,41 @@ source $ZSH/oh-my-zsh.sh
 
 # ---------------------------------------------------
 
+export ZSHRC="${ZDOTDIR}/.zshrc"
+
 export EDITOR='vim'
-export LS_COLORS="di=1;34:ln=0;35:so=32;40:pi=33;40:ex=0;31:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:"
+export LS_COLORS="di=0;34:ln=0;35:so=32;40:pi=33;40:ex=0;31:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:"
 export PS_FORMAT=pid,user,args
 
-alias ls="ls --color=auto"
-alias ll="ls -lh --color=auto"
-alias la="ls -lAh --color=auto"
-alias ps="ps -a"
-alias lp="ps | grep -i $1"
-
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias ls='ls --color=auto'
+alias ll='ls -lh '
+alias la='ls -lAh'
+alias ps='ps -ax'
+alias mount='mount | column -t'
+alias df='df -kh'
 alias mkdir="mkdir -p"
+
+alias beep='echo -en "\007"'
+alias hs='history | grep -i'
+alias lp="ps | grep -i"
+alias root='sudo -i'
+alias try='xdg-open'
+alias watch='tail -f'
+alias x='clear'
 alias hw-off="systemctl poweroff"
 alias hw-suspend="systemctl suspend"
 alias hw-reboot="systemctl reboot"
 
+cl() { cd $@ && ll; }
+
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
+
+# load zmv for intelligent mass file renames
+autoload -U zmv
 
 uname -mrs
 echo $(date +"%Y.%m.%d")  $(emoji-clock)$(date +"%H:%M:%S")
