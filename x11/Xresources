@@ -32,21 +32,6 @@ URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 2
 URxvt.depth: 32
 
-! ░▓█ rofi
-!rofi.font: xft:xft:Inconsolata\ for\ Powerline
-rofi.color-enabled: true
-rofi.color-window: argb:d8232c33, #7c9fa6, argb:00000000
-rofi.color-normal: argb:0000000, #99bfba, argb:0000000, #7c9fa6, #1b2b34
-rofi.color-active: argb:0000000, #6699cc, argb:0000000, #6699cc, #1b2b34
-rofi.color-urgent: argb:0000000, #e12a36, argb:0000000, #dd2a4b, #1b2b34
-
-rofi.padding: 16
-rofi.separator-style: none
-rofi.hide-scrollbar: true
-rofi.sidebar-mode: true
-rofi.ssh-set-title: true
-
-rofi.display-drun: >
 !░░ colors 
 ! define some key colors
 #define key1		#23898d
@@ -79,3 +64,21 @@ URxvt.background:	rgba:0000/0000/0000/c000
 ! white
 *color7: #C8D1E3
 *color15: #EDEFF2
+
+
+! ░▓█ rofi
+!rofi.font: xft:xft:Inconsolata\ for\ Powerline
+rofi.color-enabled: true
+rofi.color-window: argb:d8111111, #6699cc, argb:00000000
+rofi.color-normal: argb:0000000, key1, argb:0000000, #7c9fa6, #1b2b34
+rofi.color-active: argb:0000000, #6699cc, argb:0000000, #6699cc, #1b2b34
+rofi.color-urgent: argb:0000000, #e12a36, argb:0000000, #dd2a4b, #1b2b34
+
+rofi.padding: 16
+rofi.separator-style: none
+rofi.hide-scrollbar: true
+rofi.sidebar-mode: true
+rofi.ssh-set-title: true
+
+rofi.display-drun: >
+
