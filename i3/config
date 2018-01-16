@@ -69,7 +69,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # desktop/conky
-set $workspace1 "1:¹ "
+set $workspace1 "1:¹ "
 # term1
 set $workspace2 "2:² "
 # term2
@@ -86,10 +86,10 @@ set $workspace7 "7:⁷ "
 set $workspace8 "8:⁸ "
 
 # misc work
-set $workspace9 "9:⁹ "
-set $workspace10 "10:¹⁰ "
-set $workspace11 "11:¹¹ "
-set $workspace12 "12:¹² "
+set $workspace9 "9:⁹ "
+set $workspace10 "10:¹⁰ "
+set $workspace11 "11:¹¹ "
+set $workspace12 "12:¹² "
 
 # switch to workspace
 # -accesso
