@@ -1,25 +1,15 @@
-dotfiles
---------
+# dotfiles
+System config backup
 
-Starting to keep backups
-
-Notes:
-- rofi - config is in Xresources
-
-
-New System Packages:
-i3
-zsh
-ttf-roboto
-feh
-
-chromium
-firefox
-
-i3-gaps
-polybar
-rxvt-unicode-patched
-
-ibus
-ibus-anthy
+## Programs
+- Shell: zsh
+- Window Mgr: i3-gaps
+- Bar: polybar
+- Terminal: Termite (migrating from urxvt)
+- Launcher: rofi
+- Notifications: dunst
+- Sys Info: conky
+- Image Viewer: feh
+- Music: mpd / ncmpcpp
+- IME: ibus (Japanese: ibus-anthy)
 
