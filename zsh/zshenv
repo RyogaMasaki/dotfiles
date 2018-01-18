@@ -1,3 +1,0 @@
-ZSHDIR=$HOME/.config/zsh
-ZDOTDIR=$ZSHDIR
-HISTFILE=$ZSHDIR/.zsh_history

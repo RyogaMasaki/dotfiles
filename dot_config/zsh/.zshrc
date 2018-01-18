@@ -43,7 +43,7 @@ DISABLE_AUTO_TITLE="false"
 HIST_STAMPS="yyyymmdd"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=${ZDOTDIR}
+ZSH_CUSTOM=~/.oh-my-zsh/custom
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -55,6 +55,7 @@ plugins=(emoji-clock mysql-colorize dirhistory nyan sudo netstatus)
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ARCHFLAGS="-arch x86_64"
+export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -99,6 +100,7 @@ alias hw-suspend="systemctl suspend"
 alias hw-reboot="systemctl reboot"
 
 cl() { cd $@ && ll; }
+js() { jstrings $1 | iconv -f SHIFT-JIS -t UTF-8 -c | less; }
 
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
@@ -107,4 +109,5 @@ bindkey "${terminfo[kend]}" end-of-line
 autoload -U zmv
 
 uname -mrs
-echo $(date +"%Y.%m.%d")  $(emoji-clock)$(date +"%H:%M:%S")
+#echo $(date +"%Y.%m.%d")  $(emoji-clock)$(date +"%H:%M:%S")
+echo $(date +"%Y.%m.%d")  $(date +"%H:%M:%S")

@@ -70,14 +70,15 @@ color9  = #c30024
 
 # green
 color2  = #52b465
-color10 = #00fa8e
+color10 = #19c279
 
 # yellow
 color3  = #e87a51
 color11 = #ebda6f
 
 # blue
-color4  = #3d75ac
+color4 = #6699cc
+#color4  = #3d75ac
 color12 = #18a2ff
 
 # magenta
@@ -85,8 +86,9 @@ color5  = #9852ad
 color13 = #ef6be6
 
 # cyan
-color6  = #388a8d
-color14 = #47e3dd
+color6 = #1c6466
+#color14 = #47e3dd
+color14 = #289da2
 
 # white
 color7  = #cccccc

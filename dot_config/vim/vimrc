@@ -1,0 +1,37 @@
+" use XDG spec
+set undodir=$XDG_CACHE_HOME/vim/undo
+set directory=$XDG_CACHE_HOME/vim/swap
+set backupdir=$XDG_CACHE_HOME/vim/backup
+set viminfo+='1000,n$XDG_CACHE_HOME/vim/viminfo
+set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIMRUNTIME
+
+" encoding / file encoding
+set enc=utf-8
+set fenc=utf-8
+
+" do not emulate old vi
+set nocompatible
+
+" syntax highlighting
+syntax on
+" display line numbers
+set number
+" highlight matching braces
+set showmatch
+
+" spacing rules
+" (tabs, no spaces)
+set tabstop=2
+set softtabstop=0
+set noexpandtab
+set shiftwidth=2
+set autoindent
+set smartindent
+set ruler
+
+" disable mouse
+set mouse=""
+
+" always display status line
+set laststatus=2
+

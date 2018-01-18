@@ -1,0 +1,12 @@
+Xcursor.size: 16
+
+! Xft settings
+! 25in @ 2560x1080
+Xft.dpi: 111
+Xft.rgba: rgb
+Xft.hinting: false
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.antialias: true
+Xft.lcdfilter: lcddefault
+

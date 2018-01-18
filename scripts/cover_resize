@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# quick image resize (used for large media covers)
+# requires imagemagick
+TO_CONVERT=$1
+if [ -z "$TO_CONVERT" ]; then
+	TO_CONVERT="cover_large.jpg"
+fi
+
+if [ ! -f $TO_CONVERT ]; then
+	echo "File not found: ${TO_CONVERT}"
+	exit -1
+fi
+
+TO_NAME=$2
+if [ -z "$TO_NAME" ]; then
+	TO_NAME="cover.jpg"
+fi
+
+TO_SIZE=$3
+if [ -z "$TO_SIZE" ]; then
+	TO_SIZE="500"
+fi
+
+convert "$TO_CONVERT" -resize "$TO_SIZE"x"$TO_SIZE" "$TO_NAME"
+

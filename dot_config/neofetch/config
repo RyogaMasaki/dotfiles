@@ -1,0 +1,27 @@
+print_info() {
+    info line_break
+    info line_break
+    info title
+    info underline
+
+    info "Distro" distro 
+    info "Kernel" kernel
+    info "Uptime" uptime
+    info "Shell" shell
+    info "Res" resolution
+    info "WM" wm
+    info "Term" term
+    info "CPU" cpu
+    info "GPU" gpu
+    info "RAM" memory
+
+}
+
+distro_shorthand="off"
+os_arch="off"
+speed_shorthand="on"
+bold="off"
+gtk2="off"
+gtk3="off"
+image_backend="w3m"
+image_source="$HOME/.local/share/images/wireball_logo.png"
