@@ -11,6 +11,7 @@ scripts should go in /usr/local/bin
 ## Programs
 - Shell: zsh
 - Window Mgr: i3-gaps
+- Compositer: compton
 - Bar: polybar
 - Terminal: Termite (migrating from urxvt)
 - Launcher: rofi

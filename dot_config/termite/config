@@ -19,7 +19,7 @@ scrollback_lines = 1000
 #hyperlinks = false
 
 # $BROWSER is used by default if set, with xdg-open as a fallback
-#browser = xdg-open
+browser = xdg-open
 
 # "system", "on" or "off"
 #cursor_blink = system
@@ -39,19 +39,6 @@ scrollback_lines = 1000
 # "off", "left" or "right"
 #scrollbar = off
 
-# If both of these are unset, cursor falls back to the foreground color,
-# and cursor_foreground falls back to the background color.
-#cursor = #dcdccc
-#cursor_foreground = #dcdccc
-
-#foreground = #dcdccc
-#foreground_bold = #ffffff
-#background = #3f3f3f
-
-# 20% background transparency (requires a compositor)
-
-# If unset, will reverse foreground and background
-[colors]
 [colors]
 
 # special
@@ -62,36 +49,34 @@ background      = rgba(0, 0, 0, 0.8)
 
 # black
 color0  = #686b82
-color8  = #2b2a3b
+color8  = #2e323b
 
 # red
-color1  = #9f1e3a
+color1  = #be444b
 color9  = #c30024
 
 # green
-color2  = #52b465
-color10 = #19c279
+color2  = #679871
+color10 = #1ACB7E
 
 # yellow
-color3  = #e87a51
+color3  = #c68355
 color11 = #ebda6f
 
 # blue
-color4 = #6699cc
-#color4  = #3d75ac
+color4  = #5681ac
 color12 = #18a2ff
 
 # magenta
-color5  = #9852ad
+color5  = #866891
 color13 = #ef6be6
 
 # cyan
-color6 = #1c6466
-#color14 = #47e3dd
+color6  = #1c6466
 color14 = #289da2
 
 # white
-color7  = #cccccc
+color7  = #acacac
 color15 = #edeff2
 
 [hints]
