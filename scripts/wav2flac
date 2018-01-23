@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for infile in *.wav; do
+  ffmpeg -v 24 -i "$infile" -c:a flac -compression_level 4 "${infile[@]/%wav/flac}"
+done

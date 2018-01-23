@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for infile in *.flac; do
+  ffmpeg -i "$infile" -q:a 0 "${infile[@]/%flac/mp3}"
+done
