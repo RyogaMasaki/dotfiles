@@ -1,0 +1,21 @@
+// Place your settings in this file to overwrite the default settings
+{
+  "editor.fontFamily": "'Source Code Pro', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontSize": 12,
+  "editor.quickSuggestions": false,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": false,
+  "editor.minimap.renderCharacters": false,
+  "editor.occurrencesHighlight": true,
+  "editor.tabCompletion": true,
+  "editor.formatOnSave": true,
+  "workbench.sideBar.location": "left",
+  "workbench.startupEditor": "newUntitledFile",
+  "files.autoSave": "afterDelay",
+  "files.eol": "\n",
+  "files.encoding": "utf8",
+  "C_Cpp.clang_format_path": "/usr/bin/clang-format",
+  "C_Cpp.clang_format_style": "file",
+  "C_Cpp.clang_format_fallbackStyle": "Google",
+  "editor.minimap.enabled": false,
+}

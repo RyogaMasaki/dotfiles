@@ -172,8 +172,9 @@ bindsym $mod+l exec lock.sh
 for_window [class="^.*"] border pixel 2 #6699cc
 for_window [class="xpad"] floating enable
 for_window [class="feh"] floating enable
-for_window [class="sdlmame"] floating enable
+for_window [class="mame"] floating enable
 for_window [title="Debug: .*"] floating enable
+for_window [title="DebuggerTerminal"] floating enable
 
 gaps inner 12
 gaps outer 4
