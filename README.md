@@ -8,6 +8,16 @@ each dot\_ directory matches an XDG Base Directory type
 
 scripts should go in /usr/local/bin
 
+GRUB settings:
+/etc/default/grub
+~~~~
+GRUB_TIMEOUT=0
+GRUB_HIDDEN_TIMEOUT=1
+GRUB_HIDDEN_TIMEOUT_QUIET="true"
+GRUB_CMDLINE_LINUX_DEFAULT="quiet video=vesafb:ywrap,mtrr:3"
+GRUB_GFXMODE=1920x1080x32,auto
+~~~~
+
 ## Programs
 - Shell: zsh
 - Window Mgr: i3-gaps
