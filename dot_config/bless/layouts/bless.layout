@@ -1,0 +1,50 @@
+<layout>
+    <area type="offset">
+	<display>
+	<font>Source Code Pro 10</font>
+	    <evenrow>
+		<evencolumn>
+		    <foreground>dark red</foreground>
+		    <background>black</background>
+		</evencolumn>
+	    </evenrow>
+	    <oddrow>
+		<evencolumn>
+		    <foreground>dark red</foreground>
+		    <background>white</background>
+		</evencolumn>
+	    </oddrow>    
+	</display>
+    </area>
+    
+    <area type="separator">
+    	<display>
+	    <evenrow>
+		<evencolumn>
+		    <foreground>dark green</foreground>
+		    <background>white</background>
+		</evencolumn>
+	    </evenrow>    
+	</display>
+
+    </area>
+    
+    <area type="hexadecimal">
+	<case>upper</case>
+	<bpr>16</bpr>
+	<display>
+		<foreground>white</foreground>
+		<background>black</background>
+		<font>Source Code Pro 10</font>
+	</display>
+    </area>
+
+    <area type="ascii">
+	<display>
+	<foreground>white</foreground>
+	<background>black</background>
+
+<font>Source Code Pro 10</font>
+	</display>
+    </area>
+</layout>
