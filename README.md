@@ -31,3 +31,7 @@ GRUB_GFXMODE=1920x1080x32,auto
 - Music: mpd / ncmpcpp
 - IME: ibus (Japanese: ibus-anthy)
 
+## Other tools to reinstall (in no particular order)
+- udiskie (disk auto mount)
+- exfat-utils (exfat for SD cards)
+- p7zip (7zip)
