@@ -68,28 +68,23 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# desktop/conky
+# home (notes/music)
 set $workspace1 "1:¹ "
-# term1
-set $workspace2 "2:² "
-# term2
-set $workspace3 "3:³ "
-# fileman
-set $workspace4 "4:⁴ "
-# dev1
-set $workspace5 "5:⁵ "
-# dev2
-set $workspace6 "6:⁶ "
-#  git
+# misc
+set $workspace2 "2:² "
+set $workspace3 "3:³ "
+set $workspace4 "4:⁴ "
+# projects
+set $workspace5 "5:⁵ "
+set $workspace6 "6:⁶ "
 set $workspace7 "7:⁷ "
-#  database
 set $workspace8 "8:⁸ "
 
-# misc work
-set $workspace9 "9:⁹ "
-set $workspace10 "10:¹⁰ "
-set $workspace11 "11:¹¹ "
-set $workspace12 "12:¹² "
+# projects/dev
+set $workspace9 "9:⁹ "
+set $workspace10 "10:¹⁰ "
+set $workspace11 "11:¹¹ "
+set $workspace12 "12:¹² "
 
 # switch to workspace
 # -accesso
@@ -170,7 +165,6 @@ bindsym $mod+l exec lock.sh
 
 # find window class/title with xprop (xorg-xprop)
 for_window [class="^.*"] border pixel 2 #6699cc
-for_window [class="xpad"] floating enable
 for_window [class="feh"] floating enable
 for_window [class="mame"] floating enable
 for_window [title="Debug: .*"] floating enable
@@ -184,9 +178,9 @@ smart_borders on
 exec --no-startup-id ~/.screenlayout/default.sh
 exec --no-startup-id setbg ~/.local/share/images/wireball_wp.png
 # exec --no-startup-id ibus-daemon --xim --replace
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 exec --no-startup-id /usr/bin/compton -c -b --backend glx --vsync opengl-swc &
 exec --no-startup-id dunst &
 exec --no-startup-id mpd &
 
-exec_always --no-startup-id polybar.sh
+exec_always --no-startup-id polybar_restart

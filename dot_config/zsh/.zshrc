@@ -64,6 +64,15 @@ bindkey "^[[B" down-line-or-beginning-search
 bindkey -s '\el' 'ls\n' 
 bindkey -s '\ex' 'clear\n'
 
+# note system
+n() {
+        $EDITOR ~/notes/"$*"
+}
+
+nls() {
+        ls -c ~/notes/ | grep "$*"
+}
+
 # load zmv for intelligent mass file renames
 autoload -U zmv
 
