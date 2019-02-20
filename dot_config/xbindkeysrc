@@ -1,0 +1,19 @@
+###########################
+# xbindkeys configuration #
+###########################
+
+# Pause/Play
+"mpc -q toggle"
+   XF86AudioPlay
+
+# Next Track
+"mpc -q next"
+   XF86AudioNext
+
+# Prev Track
+"mpc -q prev"
+   XF86AudioPrev
+
+##################################
+# End of xbindkeys configuration #
+##################################

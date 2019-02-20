@@ -18,6 +18,9 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet video=vesafb:ywrap,mtrr:3"
 GRUB_GFXMODE=1920x1080x32,auto
 ~~~~
 
+xbindkeys:
+symlink .config/xbindkeysrc -> ~/.xbindkeysrc
+
 ## Programs
 - Shell: zsh
 - Window Mgr: i3-gaps
@@ -28,10 +31,13 @@ GRUB_GFXMODE=1920x1080x32,auto
 - Notifications: dunst
 - Sys Info: conky
 - Image Viewer: feh
-- Music: mpd / ncmpcpp
+- Music: mpd / mpc / ncmpcpp
 - IME: ibus (Japanese: ibus-anthy)
 
 ## Other tools to reinstall (in no particular order)
 - udiskie (disk auto mount)
 - exfat-utils (exfat for SD cards)
 - p7zip (7zip)
+- xbindkeys (global hotkeys)
+- mame (research)
+
