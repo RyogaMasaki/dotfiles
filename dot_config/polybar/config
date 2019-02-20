@@ -10,10 +10,10 @@ foreground = #23898d
 line-size = 3
 line-color = #be444b
 
-font-0 = Source\ Code\ Pro:size=14;3
-font-1 = Source\ Han\ Sans\ JP\ Regular:size=14;3
-font-2 = Font\ Awesome\ 5\ Free:style=Solid:size=14;3
-font-3 = Font\ Awesome\ 5\ Free:style=Regular:size=14;3
+font-0 = Source\ Code\ Pro:size=14
+font-1 = Source\ Han\ Sans\ JP:style=Regular:size=14
+font-2 = Font\ Awesome\ 5\ Free:style=Solid:size=14
+font-3 = Font\ Awesome\ 5\ Free:style=Regular:size=14
 
 padding-left = 0
 padding-right = 1
@@ -21,18 +21,18 @@ module-margin-left = 1
 module-margin-right = 1
 
 border-size = 0
-
 modules-left = i3 xwindow
 
 [bar/left]
 inherit = bar/bar
 monitor = ${cfg.left_monitor}
 
-modules-right = volume date 
+modules-right = date 
 
 [bar/right]
 inherit = bar/bar
 monitor = ${cfg.right_monitor}
+modules-right = mpd
 
 tray-position = right
 tray-padding-right = 10
@@ -42,7 +42,9 @@ tray-offset-x = -5
 
 [module/xwindow]
 type = internal/xwindow
-label =  %title:0:60:…%
+format =  <label>
+label = %title:0:60:…%
+label-empty =   
 format-foreground = #acacac
 
 [module/i3]
@@ -84,31 +86,15 @@ port = 6600
 
 ; Seconds to sleep between progressbar/song timer sync
 ; Default: 1
-interval = 2
-
-[module/volume]
-type = internal/volume
- 
-format-volume = <label-volume> <bar-volume>
-label-volume = 
-label-muted = " ⋯⋯⋯⋯⋯"
- 
-bar-volume-width = 5
-bar-volume-foreground-0 = #1c6466
-bar-volume-gradient = false
-bar-volume-indicator = 
-bar-volume-indicator-font = 0
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = #686b82
+interval = 1
+label-song =  %artist% - %title% (%date%)
+format-online = <label-song> 
 
 [module/date]
 type = internal/date
 interval = 1
  
-date = ""
+date = 
 date-alt = "%Y.%m.%d"
 time = "%H:%M"
 time-alt = " %H:%M:%S"
@@ -118,7 +104,7 @@ format-prefix = " "
 ;format-underline = ${colors.blue}
  
 label = %date%%time%
-click-right = zenity --calendar
+;click-right = zenity --calendar
 
 [settings]
 screenchange-reload = true
