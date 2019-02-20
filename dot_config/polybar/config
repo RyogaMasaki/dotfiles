@@ -87,7 +87,7 @@ port = 6600
 ; Seconds to sleep between progressbar/song timer sync
 ; Default: 1
 interval = 1
-label-song =  %artist% - %title% (%date%)
+label-song =  %artist% - %title% (%date:0:4:%)
 format-online = <label-song> 
 
 [module/date]
