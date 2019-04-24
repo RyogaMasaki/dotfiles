@@ -182,8 +182,8 @@ exec --no-startup-id setbg ~/.local/share/images/wireball_wp.png
 exec --no-startup-id /usr/bin/compton -b &
 exec --no-startup-id dunst &
 exec --no-startup-id xbindkeys &
-exec --no-startup-id amixersset Master unmute
-exec --no-startup-id amixersset Headphone mute
-exec --no-startup-id amixersset S/PDIF unmute
+exec --no-startup-id amixer sset Master unmute
+exec --no-startup-id amixer sset Headphone mute
+exec --no-startup-id amixer sset IEC958 unmute
 
 exec_always --no-startup-id polybar_restart
