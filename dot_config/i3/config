@@ -179,8 +179,11 @@ exec --no-startup-id ~/.screenlayout/default.sh
 exec --no-startup-id setbg ~/.local/share/images/wireball_wp.png
 # exec --no-startup-id ibus-daemon --xim --replace
 # exec --no-startup-id nm-applet
-exec --no-startup-id /usr/bin/compton -c -b --backend glx --vsync opengl-swc &
+exec --no-startup-id /usr/bin/compton -b &
 exec --no-startup-id dunst &
-exec --no-startup-id mpd &
+exec --no-startup-id xbindkeys &
+exec --no-startup-id amixersset Master unmute
+exec --no-startup-id amixersset Headphone mute
+exec --no-startup-id amixersset S/PDIF unmute
 
 exec_always --no-startup-id polybar_restart
