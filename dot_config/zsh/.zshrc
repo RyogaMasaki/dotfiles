@@ -49,6 +49,7 @@ alias battery="upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E 
 
 cl() { cd $@ && ll; }
 js() { jstrings $1 | iconv -f SHIFT-JIS -t UTF-8 -c | less; }
+unixnl() { vim $1 -c "set ff=unix" -c ":wq" }
 
 autoload -U up-line-or-beginning-search
 zle -N up-line-or-beginning-search
