@@ -11,7 +11,8 @@ line-size = 3
 line-color = #be444b
 
 font-0 = Source\ Code\ Pro:size=14
-font-1 = Source\ Han\ Sans\ JP:style=Regular:size=14
+#font-1 = Source\ Han\ Sans\ JP:style=Regular:size=14
+font-1 = Kinto\ Sans:style=Regular:size=14
 font-2 = Font\ Awesome\ 5\ Free:style=Solid:size=14
 font-3 = Font\ Awesome\ 5\ Free:style=Regular:size=14
 

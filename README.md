@@ -40,4 +40,5 @@ symlink .config/xbindkeysrc -> ~/.xbindkeysrc
 - p7zip (7zip)
 - xbindkeys (global hotkeys)
 - mame (research)
+- Kinto font https://github.com/ookamiinc/kinto
 
