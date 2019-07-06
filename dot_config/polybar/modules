@@ -1,0 +1,69 @@
+; module configuration
+
+[module/xwindow]
+type = internal/xwindow
+;format =  <label>
+format = <label>
+label = %title:0:80:…%
+label-empty =   
+format-foreground = #222222
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+pin-workspaces = true
+#index-sort = true
+strip-wsnumbers = true
+wrapping-scroll = false
+enable-click = true
+
+label-mode-padding = 3
+ 
+; focused = Active workspace on focused monitor
+label-focused = %name%
+label-focused-foreground = #dddddd
+label-focused-background = #222222
+label-focused-padding = ${self.label-mode-padding}
+ 
+; unfocused = Inactive workspace on any monitor
+label-unfocused = ${self.label-focused}
+label-unfocused-padding = ${self.label-mode-padding}
+
+; visible = Active workspace on unfocused monitor
+label-visible = ${self.label-focused}
+label-visible-padding = ${self.label-mode-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = ${self.label-focused}
+label-urgent-foreground = #ba0636
+label-urgent-padding = ${self.label-mode-padding}
+ 
+[module/mpd]
+type = internal/mpd
+
+host = 127.0.0.1
+port = 6600
+
+; Seconds to sleep between progressbar/song timer sync
+; Default: 1
+interval = 1
+label-song =  %artist% - %title% (%date:0:4:%)
+format-online = <label-song> 
+
+[module/date]
+type = internal/date
+interval = 1
+ 
+date = 
+date-alt = "%Y-%m-%d"
+time = "%H:%M"
+time-alt = " %H:%M:%S"
+
+format-prefix = " "
+;format-prefix-foreground = ${colors.green}
+;format-underline = ${colors.blue}
+ 
+label = %date%%time%
+;click-right = zenity --calendar
+
+; vim:ft=dosini

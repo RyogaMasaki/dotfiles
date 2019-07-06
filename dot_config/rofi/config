@@ -1,10 +1,10 @@
 rofi.font: Source Code Pro 14
 rofi.color-enabled: true
-! 									bg, border, separator
-rofi.color-window: argb:cc000000, #1c6466, #1c6466
+! bg, border, separator
+rofi.color-window: argb:ccdddddd, #222222, #222222
 
-!                  bg, fg, bgalt, hlbg, hlfg
-rofi.color-normal: argb:00000000, #289da2, argb:00000000,#7c9fa6,#1b2b34
+! bg, fg, bgalt, hlbg, hlfg
+rofi.color-normal: argb:00000000, #222222, argb:00000000, #222222, #dddddd
 !rofi.color-active: #000000, #6699cc, #000000, #6699cc, #1b2b34
 !rofi.color-urgent: argb:000000000, #e12a36, argb:000000000, #dd2a4b, #1b2b34
 

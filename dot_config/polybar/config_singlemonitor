@@ -1,0 +1,10 @@
+include-file = $XDG_CONFIG_HOME/polybar/global
+
+include-file = $XDG_CONFIG_HOME/polybar/mainbar
+
+modules-left = i3 xwindow
+modules-right = date
+
+include-file = $XDG_CONFIG_HOME/polybar/modules
+
+; vim:ft=dosini
