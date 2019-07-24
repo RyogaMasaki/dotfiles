@@ -109,12 +109,12 @@ gaps outer 2
 smart_gaps on
 #smart_borders on
 
-# program launcher
-bindsym $mod+grave exec rofi -show drun
+# launcher and terminal
+bindsym $mod+Tab exec rofi -show drun
+bindsym $mod+grave exec termite
 
 # quick start shortcuts
-bindsym $mod+1 exec termite
-bindsym $mod+2 exec pcmanfm
+bindsym $mod+1 exec pcmanfm
 
 # startup applications
 exec --no-startup-id ~/.screenlayout/default.sh
