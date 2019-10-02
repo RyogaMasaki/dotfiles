@@ -4,7 +4,7 @@
 type = internal/xwindow
 ;format =  <label>
 format = <label>
-label = %title:0:80:…%
+label = %title:0:120:…%
 label-empty =   
 format-foreground = #222222
 
@@ -31,6 +31,7 @@ label-unfocused-padding = ${self.label-mode-padding}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = ${self.label-focused}
+label-visible-background = #bbbbbb
 label-visible-padding = ${self.label-mode-padding}
 
 ; urgent = Workspace with urgency hint set
@@ -48,7 +49,8 @@ port = 6600
 ; Default: 1
 interval = 1
 label-song =  %artist% - %title% (%date:0:4:%)
-format-online = <label-song> 
+format-online = <label-song>
+format-online-margin = 25
 
 [module/date]
 type = internal/date

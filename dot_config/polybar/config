@@ -17,6 +17,15 @@ modules-right = date
 inherit = bar/bar
 monitor = ${cfg.right_monitor}
 modules-right = mpd
+#tray-background = #dddddd
+tray-detached = true
+tray-position = right
+#tray-padding-right = 200
+tray-maxsize = 28
+tray-scale = 1
+tray-offset-x = -10
+
+
 
 include-file = $XDG_CONFIG_HOME/polybar/modules
 

@@ -20,12 +20,12 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-#tray-background = #00
+#tray-background = #dddddd
 #tray-detached = true
-;tray-position = center
-;tray-padding-right = 1
-;tray-maxsize = 28
-;tray-scale = 1
-;tray-offset-x = 810
+#tray-position = right
+#tray-padding-right = 1
+#tray-maxsize = 28
+#tray-scale = 1
+#tray-offset-x = 1
 
 ; vim:ft=dosini
