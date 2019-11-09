@@ -46,6 +46,7 @@ alias hw-off="systemctl poweroff"
 alias hw-suspend="systemctl suspend"
 alias hw-reboot="systemctl reboot"
 alias battery="upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E \"state|to\\ full|percentage\""
+alias mamed="mame -debugger on"
 
 cl() { cd $@ && ll; }
 js() { jstrings $1 | iconv -f SHIFT-JIS -t UTF-8 -c | less; }
@@ -59,13 +60,18 @@ autoload colors && colors
 
 bindkey -e
 bindkey "${terminfo[khome]}" beginning-of-line
-bindkey "${terminfo[kend]}" end-of-line
+#bindkey '\e[4~' end-of-line
 bindkey "^[[A" up-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
-bindkey -s '\el' 'ls\n' 
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+bindkey "^[[3~" delete-char
+
+# alt+l
+bindkey -s '\el' 'ls -la\n' 
+# alt+x
 bindkey -s '\ex' 'clear\n'
 
-# note system
 n() {
         $EDITOR ~/notes/"$*"
 }
