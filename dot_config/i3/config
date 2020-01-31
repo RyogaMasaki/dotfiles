@@ -98,8 +98,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 for_window [class="^.*"] border pixel 2 #6699cc
 for_window [class="feh"] floating enable
 for_window [class="mame"] floating enable
+for_window [class="mame"] border pixel 0
 for_window [title="Debug: .*"] floating enable
 for_window [title="DebuggerTerminal"] floating enable
+for_window [title="SpeedCrunch"] floating enable
 
 gaps inner 6
 gaps outer 2
@@ -112,6 +114,7 @@ bindsym $mod+grave exec termite
 
 # quick start shortcuts
 bindsym $mod+1 exec pcmanfm
+bindsym $mod+2 exec speedcrunch
 
 # startup applications
 exec --no-startup-id ~/.screenlayout/default.sh
